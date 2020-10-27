@@ -115,6 +115,10 @@ input, select {
     border: 1px solid #EF5350 !important;
 }
 
+.achievementhidden {
+    border-width: 1px !important;
+}
+
 .infinistorebtn1 {
     border: 1px solid black !important;
 }
@@ -269,6 +273,14 @@ input, select {
     animation: idleStudyGlowIn 5s infinite !important;
 }
 
+.timestudy.darkstudy {
+    animation: darkStudyGlowIn 5s infinite !important;
+}
+
+.timestudy.lightstudy {
+    animation: lightStudyGlowIn 5s infinite !important;
+}
+
 .timestudy:hover {
     color: #EEEEEE !important;
     background: #512DA8 !important;
@@ -327,6 +339,18 @@ input, select {
 
 .timestudybought.idlestudy {
     background: #0080ff !important;
+}
+
+.timestudybought.darkstudy {
+    color: black !important;
+    background-color: white !important;
+    border-color: black !important;
+}
+
+.timestudybought.lightstudy {
+    color: white !important;
+    background-color: black !important;
+    border-color: white !important;
 }
 
 .timestudylocked, .eternitychallengestudylocked {
@@ -437,6 +461,21 @@ input, select {
     background: #9E9E9E !important;
     box-shadow: 1px 1px 1px 0px #000;
     border: none !important;
+}
+
+.dilationbtn {
+    border-width: 1px !important;
+}
+
+.dilationupglocked, .dilationupgrebuyablelocked {
+    color: black !important;
+    background: #9E9E9E !important;
+    box-shadow: 1px 1px 1px 0px #000;
+    border: none !important;
+}
+
+.dilationupglocked:hover, .dilationupgrebuyablelocked:hover {
+    background: #EF5350 !important;
 }
 
 @keyframes metroStudyGlowIn {

@@ -15,6 +15,10 @@
     outline: none;
 }
 
+button {
+    padding: 1px 6px;
+}
+
 #game {
     border: 2px solid black;
     border-radius: 4px;
@@ -24,7 +28,11 @@
     margin: auto;
     text-align: left
 }
-  
+
+#TTbuttons {
+    font-family: Typewriter;
+}
+
 #news {
     color: #000000;
     /*transition: transform 1s;*/
@@ -37,7 +45,7 @@
 }
 
 .challengesbtn {
-    
+
     width:150px;
     height: 30px;
     color: black;
@@ -77,7 +85,7 @@
     left: 0;
     bottom: 5px;
 }
-  
+
 .challengediv {
     display:table;
     text-align:center;
@@ -385,7 +393,7 @@
     transition-duration: 0.2s;
     cursor: pointer;
     position: absolute;
-    left: 80%;
+    left: 75%;
     width: 210px;
     height: 70px;
     font-family: Typewriter;
@@ -414,10 +422,10 @@
 }
 
 .IP {
-    left:81.5%;
+    left: 75%;
     position: absolute;
     font-size: 12px;
-    width: 150px;
+    width: 210px;
 }
 
 .IPAmount2 {
@@ -425,11 +433,11 @@
 }
 
 .EP {
-    right:81.5%;
+    right: 75%;
     position: absolute;
     font-size: 12px;
-    width: 150px;
-} 
+    width: 210px;
+}
 
 .EPAmount2 {
     font-weight: bold;
@@ -441,7 +449,7 @@
     transition-duration: 0.2s;
     cursor: pointer;
     position: absolute;
-    right: 80%;
+    right: 75%;
     width: 200px;
     height: 60px;
     font-family: Typewriter;
@@ -464,7 +472,7 @@
     border-radius: 4px;
     transition-duration: 0.2s;
     position: absolute;
-    right: 80%;
+    right: 75%;
     width: 200px;
     height: 60px;
     color: #000000;
@@ -481,12 +489,11 @@
 }
 
 .eternitybtn {
-    font-weight: bold;
     border-radius: 4px;
     transition-duration: 0.2s;
     cursor: pointer;
     position: absolute;
-    right: 80%;
+    right: 75%;
     width: 210px;
     height: 70px;
     font-family: Typewriter;
@@ -494,7 +501,7 @@
     background: black;
     border: 2px solid #b341e0;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 11px;
 }
 
 
@@ -539,31 +546,48 @@
     background: white;
 }
 
-.achievementlocked {
-    background: #A3A3A3;
-    border: 2px solid #B84B5F;
-    width: 100px;
-    height: 100px;
+.achievementhidden {
+    background-image: url("../images/achhidden.png") !important;
+    background-color: #555;
+    border: 2px solid #000;
+    width: 104px;
+    height: 104px;
     border-radius: 8px;
     margin: 0px auto;
     text-align: center;
     font-family: TypeWriter;
     color: black;
     font-size: 70%;
+    user-select: none;
+}
+
+.achievementlocked {
+    background: #A3A3A3;
+    border: 2px solid #B84B5F;
+    width: 104px;
+    height: 104px;
+    border-radius: 8px;
+    margin: 0px auto;
+    text-align: center;
+    font-family: TypeWriter;
+    color: black;
+    font-size: 70%;
+    user-select: none;
 }
 
 .achievementunlocked {
     border: 2px solid #127A20;
     background: #5AC467;
     color: black;
-    width: 100px;
-    height: 100px;
+    width: 104px;
+    height: 104px;
     border-radius: 8px;
     margin: 0px auto;
     text-align: center;
     font-family: TypeWriter;
     color: black;
     font-size: 70%;
+    user-select: none;
 }
 
 .autoBuyerDiv {
@@ -609,7 +633,7 @@
     position: relative;
     top: 50%;
     left: 40%;
-    
+
 }
 
 .crunchbtn:hover {
@@ -622,9 +646,10 @@
 }
 
 .popup {
-    position: absolute;
-    left: 33%;
-    top: 33%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translateX(-50%) translateY(-50%);
     border: 3px solid black;
     width: 300px;
     height: 120px;
@@ -639,11 +664,44 @@
     display: none;
 }
 
+.savemenu {
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 300px;
+}
+
+.savemenu div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 10px;
+}
+
+.savemenu .closebtn {
+	width: 30px;
+	height: 30px;
+	font-size: 1.5rem;
+	line-height: 1.5rem;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}
+
+.savemenu .storebtn {
+	margin: 5px;
+}
+
+.save_selected {
+	display: none;
+}
+
 #footercontainer {
     bottom: 0;
     position: fixed;
     width: 100%;
     z-index: 1;
+    pointer-events: none;
 }
 
 
@@ -655,6 +713,10 @@
     font-family: Typewriter;
 }
 
+#footer tr td div {
+    pointer-events: all !important;
+}
+
 #progress {
     width: 98%;
     background-color: #A3A3A3;
@@ -662,6 +724,7 @@
     bottom: 35px;
     position: fixed;
     z-index: 1;
+    pointer-events: none;
 }
 
 #progressbar {
@@ -674,6 +737,9 @@
     transition-duration: 0.1s;
 }
 
+#progresspercent {
+    pointer-events: all !important;
+}
 
 .greedbtn {
     height: 40px;
@@ -705,6 +771,7 @@
 
 #replicantiresettoggle {
     margin-top: 3px;
+    margin-right: 6px;
 }
 
 .eternitychallengestudy {
@@ -741,6 +808,17 @@
     animation: studyGlowIn 7s infinite;
 }
 
+.small {
+    margin: 1px;
+    width: 120px;
+    font-size: 0.6rem;
+    padding: 3px;
+}
+
+.wideRow td {
+    padding: 5px 2px;
+}
+
 .timestudy.normaldimstudy {
     color: #22aa48 !important;
     border: 1px solid #198036 !important;
@@ -775,6 +853,20 @@
     color: #0080ff !important;
     border: 1px solid #0066cc !important;
     animation: idleStudyGlowIn 7s infinite;
+}
+
+.timestudy.darkstudy {
+    color: white !important;
+    background-color: black !important;
+    border-color: white !important;
+    animation: darkStudyGlowIn 7s infinite;
+}
+
+.timestudy.lightstudy {
+    color: black !important;
+    background-color: white !important;
+    border-color: black !important;
+    animation: lightStudyGlowIn 7s infinite;
 }
 
 .eternitychallengestudy:hover {
@@ -815,6 +907,18 @@
 .timestudy.idlestudy:hover {
     color: #EEEEEE !important;
     background: #0080ff !important;
+}
+
+.timestudy.darkstudy:hover {
+    color: black !important;
+    background-color: white !important;
+    border-color: black !important;
+}
+
+.timestudy.lightstudy:hover {
+    color: white !important;
+    background-color: black !important;
+    border-color: white !important;
 }
 
 .timestudylocked, .eternitychallengestudylocked {
@@ -881,7 +985,7 @@
     font-size: 0.85rem;
     position: fixed;
     left: 50%;
-    
+
     bottom: 5px;
     z-index: 1;
 }
@@ -923,24 +1027,34 @@
     position: fixed;
     bottom: 80px;
     left: 50%;
-    margin-left: -114px;
+    font-size: 15px;
+    transform: translateX(-50%);
+}
+
+#studytreeloadsavetext {
+    color: black;
+    position: fixed;
+    bottom: 82px;
+    left: 50%;
+    margin-left: 145px;
+    font-size: 10px;
 }
 
 #theorembuybackground {
     background: #E0E0E0;
-    width: 550px;
+    width: 570px;
     height: 110px;
     position: fixed;
     bottom: 0;
     left: 50%;
-    margin-left: -277px;
+    margin-left: -287px;
     border: 2px solid black;
     border-bottom: none;
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
 }
 
-#studyTreeCanvas {
+#studyTreeCanvas, #dilationCanvas {
     top: 0;
     left: 0;
     position: absolute;
@@ -1048,6 +1162,158 @@
     font-size: 12px;
 }
 
+.dilationbtn {
+    color: #64DD17;
+    background: black;
+    font-weight: bold;
+    font-size: 0.7rem;
+    border: 2px solid #64DD17;
+    width: 190px;
+    height: 90px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: Typewriter;
+    animation: dilationBtnGlow 10s infinite;
+}
+
+.dilationbtn:hover {
+    color: #64DD17;
+    background: white;
+}
+
+.dilationupg {
+    color: #64DD17;
+    background: black;
+    font-weight: bold;
+    font-size: 0.65rem;
+    border: 1px solid #64DD17;
+    width: 170px;
+    height: 80px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: Typewriter;
+    animation: dilationBtnGlow 10s infinite;
+    vertical-align: top;
+    margin:7px;
+}
+
+.dilationupgrebuyable {
+    color: #64ddad;
+    background: black;
+    font-weight: bold;
+    font-size: 0.65rem;
+    border: 1px solid #64ddad;
+    width: 170px;
+    height: 80px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: Typewriter;
+    animation: dilationBtnGlow2 10s infinite;
+    vertical-align: top;
+    margin:7px;
+}
+
+.dilationupgbought {
+    color: black;
+    background: #64DD17;
+    font-weight: bold;
+    font-family: Typewriter;
+    border: 1px solid black;
+    width: 170px;
+    height: 80px;
+    transition-duration: 0.2s;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    vertical-align: top;
+    margin:7px;
+}
+
+.dilationupgrebuyablelocked {
+    color: #181818;
+    background: #5F5F5F;
+    font-weight: bold;
+    font-family: Typewriter;
+    border: 1px solid #64ddad;
+    width: 170px;
+    height: 80px;
+    transition-duration: 0.2s;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    vertical-align: top;
+    margin:7px;
+}
+
+.dilationupglocked {
+    color: #181818;
+    background: #5F5F5F;
+    font-weight: bold;
+    font-family: Typewriter;
+    border: 1px solid #3e8a0f;
+    width: 170px;
+    height: 80px;
+    transition-duration: 0.2s;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    vertical-align: top;
+    margin:7px;
+}
+
+.dilationupglocked:hover {
+    color: #1D1D1D;
+    background: #660000;
+}
+
+.dilationupg:hover {
+    color: #64DD17;
+    background: white;
+}
+
+.dilationupgrebuyable:hover {
+    color: #64ddad;
+    background: white;
+}
+
+.glyph {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height: 50px !important;
+    width: 50px !important;
+    background: black;
+    font-size: 1.5rem;
+    transition-duration: 0.2s;
+    cursor: pointer;
+    font-family: Typewriter;
+}
+
+.glyph:hover {
+    background: white;
+}
+
+.glyph.normalglyph {
+    color: #22aa48;
+    border: 1px solid #22aa48;
+    box-shadow: inset #22aa48 0px 0px 10px 2px, #22aa48 0px 0px 10px 2px;
+    text-shadow: #22aa48 -1px 1px 2px;
+}
+
+.infinityglyph {
+    color: #B67F33;
+    border: 1px solid #B67F33;
+    box-shadow: inset #B67F33 0px 0px 10px 2px, #B67F33 0px 0px 10px 2px;
+    text-shadow: #B67F33 -1px 1px 2px;
+}
+
+.timeglyph {
+    color: #B241E3;
+    border: 1px solid #B241E3;
+    box-shadow: inset #B241E3 0px 0px 10px 2px, #B241E3 0px 0px 10px 2px;
+    text-shadow: #B241E3 -1px 1px 2px;
+}
+
 @keyframes glow {
     20% { text-shadow: 0 0 10px green; }
     100% { text-shadow: 0 0 10px white; }
@@ -1117,7 +1383,7 @@ body {
     padding: 1px 7px;
     font: 14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #727272;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 h1,
@@ -1334,12 +1600,36 @@ br {
     pointer-events:none;
 }
 
+#TTbuttons br {
+    content: " ";
+    display: block;
+    margin: 0;
+    margin-top: 20px;
+    pointer-events:none;
+}
+
 
 
 #timestudies span {
     display:block;
     pointer-events:none;
 }
+
+
+.floatingText {
+    position: absolute;
+    bottom: 20px;
+    left: 150px;
+    animation: float 1s 1;
+    color: green;
+    font-size: 1.2em;
+    opacity: 0;
+}
+
+.rel {
+    position: relative;
+}
+  
 
 
 
@@ -1443,23 +1733,75 @@ screen and (max-width: 480px) {
 @keyframes activeStudyGlowIn {
     0%  {box-shadow: inset 0px 0px 3px 0px #FF0100;}
     50% {box-shadow: inset 0px 0px 20px 0px #FF0100;}
-    100%  {box-shadow: inset 0px 0px 3px 0px #FF0100;}
+    100% {box-shadow: inset 0px 0px 3px 0px #FF0100;}
 }
 
 @keyframes passiveStudyGlowIn {
     0%  {box-shadow: inset 0px 0px 3px 0px #5E33B6;}
     50% {box-shadow: inset 0px 0px 20px 0px #5E33B6;}
-    100%  {box-shadow: inset 0px 0px 3px 0px #5E33B6;}
+    100% {box-shadow: inset 0px 0px 3px 0px #5E33B6;}
 }
 
 @keyframes idleStudyGlowIn {
     0%  {box-shadow: inset 0px 0px 3px 0px #0080ff;}
     50% {box-shadow: inset 0px 0px 20px 0px #0080ff;}
-    100%  {box-shadow: inset 0px 0px 3px 0px #0080ff;}
+    100% {box-shadow: inset 0px 0px 3px 0px #0080ff;}
 }
 
 @keyframes eternityChallengeGlowIn {
     0%  {box-shadow: inset 0px 0px 3px 0px #490066;}
     50% {box-shadow: inset 0px 0px 20px 0px #490066;}
-    100%  {box-shadow: inset 0px 0px 3px 0px #490066;}
+    100% {box-shadow: inset 0px 0px 3px 0px #490066;}
 }
+
+@keyframes darkStudyGlowIn {
+    0%  {box-shadow: inset 0px 0px 3px 0px white;}
+    50% {box-shadow: inset 0px 0px 20px 0px white;}
+    100% {box-shadow: inset 0px 0px 3px 0px white;}
+}
+
+@keyframes lightStudyGlowIn {
+    0%  {box-shadow: inset 0px 0px 3px 0px black;}
+    50% {box-shadow: inset 0px 0px 20px 0px black;}
+    100% {box-shadow: inset 0px 0px 3px 0px black;}
+}
+
+@keyframes dilationBtnGlow {
+    0%  {box-shadow: inset 5px 0px 20px #64DD17;}
+    25% {box-shadow: inset 0px 5px 20px #64DD17;}
+    50% {box-shadow: inset -5px 0px 20px #64DD17;}
+    75% {box-shadow: inset 0px -5px 20px #64DD17;}
+    100% {box-shadow: inset 5px 0px 20px #64DD17;}
+}
+
+@keyframes dilationBtnGlow2 {
+    0%  {box-shadow: inset -5px 0px 20px #64ddad;}
+    25% {box-shadow: inset 0px -5px 20px #64ddad;}
+    50% {box-shadow: inset 5px 0px 20px #64ddad;}
+    75% {box-shadow: inset 0px 5px 20px #64ddad;}
+    100% {box-shadow: inset -5px 0px 20px #64ddad;}
+}
+
+@keyframes barrelRoll {
+    0%  {transform: rotateZ(0deg);}
+    50% {transform: rotateZ(360deg);}
+    100% {transform: rotateZ(360deg);}
+}
+
+@keyframes spin3d {
+    0%  {transform: rotate3d(5.2, -2.8, 1.4, 0deg);}
+    100% {transform: rotate3d(5.2, -2.8, 1.4, 360deg);}
+}
+
+@keyframes float {
+    0% { bottom: 0px; opacity: 0;}
+    50% {opacity: 1; }
+    100% { bottom: 50px; opacity: 0;}
+}
+
+@keyframes implode {
+    0% {transform:scale(1); filter:blur(0px)}
+    50% {transform:scale(0); filter:blur(5px)}
+    100% {transform:scale(1); filter:blur(0px)}
+}
+
